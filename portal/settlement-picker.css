@@ -1,0 +1,88 @@
+.settlement-picker {
+  position: relative;
+  min-width: 0;
+}
+.settlement-picker > input {
+  width: 100%;
+}
+.settlement-picker-panel {
+  position: absolute;
+  z-index: 8;
+  top: calc(100% + 6px);
+  inset-inline: 0;
+  overflow: hidden;
+  border: 1px solid #bacbb0;
+  border-radius: 6px;
+  background: #fffef9;
+  box-shadow: 0 12px 30px rgb(34 57 31 / 14%);
+}
+.settlement-picker-heading {
+  padding: 11px 13px 8px;
+  color: #536b49;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+  border-bottom: 1px solid #e1e8dc;
+}
+.settlement-picker-options {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  max-height: 270px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.settlement-picker-option {
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.settlement-picker-option:hover,
+.settlement-picker-option.is-active {
+  color: #253f21;
+  background: #eaf1e2;
+}
+.settlement-picker-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+.settlement-picker-region {
+  font-size: 14px;
+  color: #576b50;
+}
+.settlement-picker-empty {
+  padding: 13px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #53694a;
+}
+.settlement-picker-hint {
+  margin-top: 7px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #526457;
+}
+.settlement-picker-panel.is-above {
+  top: auto;
+  bottom: calc(100% + 6px);
+}
+.settlement-picker-source {
+  display: inline-block;
+  margin-left: 6px;
+  color: #3c5e35;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 540px) {
+  .settlement-picker-options {
+    max-height: 215px;
+  }
+  .settlement-picker-option {
+    padding: 12px 10px;
+  }
+}

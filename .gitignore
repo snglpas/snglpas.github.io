@@ -1,0 +1,5 @@
+# Local bootstrap tooling (portable git) — not part of the site
+.gitbin/
+
+# Excluded per request
+README.md

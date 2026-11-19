@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1000" viewBox="0 0 900 1000" fill="none">
+  <title>Архитектура структуры</title>
+  <desc>Три монументальные арки из светлого матового камня, расположенные друг за другом на мягком серо-зеленом фоне.</desc>
+  <defs>
+    <linearGradient id="background" x1="80" y1="0" x2="805" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1F2EC"/>
+      <stop offset=".55" stop-color="#E8EBE4"/>
+      <stop offset="1" stop-color="#DDE3D9"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientTransform="translate(120 160) rotate(48) scale(780 670)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="face" x1="-20" y1="100" x2="410" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F7F1"/>
+      <stop offset=".48" stop-color="#E3E5DC"/>
+      <stop offset="1" stop-color="#CED4C8"/>
+    </linearGradient>
+    <linearGradient id="crown" x1="80" y1="-50" x2="427" y2="185" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F7F0"/>
+      <stop offset=".35" stop-color="#DBE0D4"/>
+      <stop offset=".74" stop-color="#BAC3B4"/>
+      <stop offset="1" stop-color="#A9B5A2"/>
+    </linearGradient>
+    <linearGradient id="outer" x1="380" y1="300" x2="442" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8F9D87"/>
+      <stop offset="1" stop-color="#ACB6A4"/>
+    </linearGradient>
+    <linearGradient id="inside" x1="80" y1="220" x2="142" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AAB4A0"/>
+      <stop offset="1" stop-color="#697B64"/>
+    </linearGradient>
+    <linearGradient id="vault" x1="100" y1="220" x2="310" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9CAA92"/>
+      <stop offset=".45" stop-color="#7E8E73"/>
+      <stop offset="1" stop-color="#C5CDBB"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="200" y1="950" x2="760" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C7D0C0" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#8B9B7F" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#7A8B70" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-200%" width="200%" height="500%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="contact" x="-50%" y="-300%" width="200%" height="700%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".035"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="multiply"/>
+    </filter>
+    <g id="portal">
+      <!-- Rear plane and the continuously curved outer edge. -->
+      <path d="M62 478V148a190 190 0 0 1 380 0v330h-80V148a110 110 0 0 0-220 0v330Z" fill="#BBC4B2"/>
+      <path d="M0 190a190 190 0 0 1 380 0l62-42a190 190 0 0 0-380 0Z" fill="url(#crown)"/>
+      <path d="m380 190 62-42v330l-62 42Z" fill="url(#outer)"/>
+      <!-- The left inner reveal is visible through the opening. -->
+      <path d="m80 190 62-42v330l-62 42Z" fill="url(#inside)"/>
+      <path d="M80 190a110 110 0 0 1 220 0l62-42a110 110 0 0 0-220 0Z" fill="url(#vault)"/>
+      <!-- One uninterrupted, generous stone front. -->
+      <path d="M0 520V190a190 190 0 0 1 380 0v330h-80V190a110 110 0 0 0-220 0v330Z" fill="url(#face)"/>
+      <path d="M.5 520V190a189.5 189.5 0 0 1 379 0v330" stroke="#FFFFFF" stroke-opacity=".55"/>
+      <path d="M80 520V190a110 110 0 0 1 220 0v330" stroke="#86957A" stroke-opacity=".2"/>
+      <path d="m380 190 62-42" stroke="#D5DDCB" stroke-opacity=".6"/>
+    </g>
+  </defs>
+
+  <path fill="url(#background)" d="M0 0h900v1000H0z"/>
+  <path fill="url(#light)" d="M0 0h900v1000H0z"/>
+
+  <!-- The floor is deliberately almost imperceptible. -->
+  <path d="M0 912 900 460M0 752l505 248" stroke="#8D9A83" stroke-opacity=".07"/>
+  <path d="m200 862 506-366 181 196-470 286Z" fill="url(#ground)"/>
+  <ellipse cx="499" cy="780" rx="290" ry="69" transform="rotate(-24 499 780)" fill="#506344" opacity=".15" filter="url(#shadow)"/>
+
+  <!-- Equal-size portals recede in an orthographic architectural view. -->
+  <ellipse cx="574" cy="631" rx="209" ry="10" fill="#516247" opacity=".17" filter="url(#contact)"/>
+  <use href="#portal" x="364" y="110"/>
+
+  <ellipse cx="452" cy="736" rx="210" ry="11" fill="#4D5E43" opacity=".19" filter="url(#contact)"/>
+  <use href="#portal" x="244" y="215"/>
+
+  <ellipse cx="331" cy="841" rx="210" ry="12" fill="#4C5D42" opacity=".24" filter="url(#contact)"/>
+  <use href="#portal" x="124" y="320"/>
+
+  <path d="M0 0h900v1000H0z" fill="transparent" filter="url(#grain)" opacity=".55"/>
+</svg>
